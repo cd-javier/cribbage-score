@@ -1,9 +1,9 @@
 {
-  "name": "react-template",
+  "name": "cribbage-score",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://link-to-live-preview/your-repo-name",
+  "homepage": "https://cd-javier.github.com/cribbage-score",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
