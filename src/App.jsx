@@ -1,11 +1,21 @@
 import './App.css';
 import { useState } from 'react';
 import { useRef } from 'react';
+import { useEffect } from 'react';
+import confetti from 'canvas-confetti';
 
 import ButtonPanel from './ButtonPanel';
 import Score from './Score';
 
 function WinnerModal({ handleClose, handleRestart }) {
+  useEffect(() => {
+    confetti({
+      particleCount: 200,
+      spread: 90,
+      colors: ['#debb1b', '#18c337'],
+      ticks: 300,
+    });
+  }, []);
   return (
     <div className="overlay">
       <div className="winner-modal">
@@ -26,7 +36,7 @@ function WinnerModal({ handleClose, handleRestart }) {
 
 export default function App() {
   const [scoreDisplay, setScoreDisplay] = useState([0, 0]);
-  const [showWinnerOverlay, setShowWinnerOverlay] = useState(false);
+  const [showWinnerOverlay, setShowWinnerOverlay] = useState(true);
   const score = useRef(new Score());
 
   function updateDisplay() {

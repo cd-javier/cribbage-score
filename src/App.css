@@ -41,12 +41,12 @@ body {
 }
 
 .p1 {
-  --button-color: hsl(49, 78%, 49%);
+  --button-color: #debb1b;
   --button-text: #5c4b00;
 }
 
 .p2 {
-  --button-color: hsl(131, 78%, 43%);
+  --button-color: #18c337;
   --button-text: #00490d;
 }
 
