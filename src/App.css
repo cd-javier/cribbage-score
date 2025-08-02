@@ -22,7 +22,6 @@ body {
 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, min-content);
   row-gap: 1rem;
   column-gap: 2rem;
 }
@@ -88,6 +87,7 @@ body {
   background: #0003;
   width: 100%;
   height: 100%;
+  z-index: 1;
 }
 
 .winner-modal {
@@ -119,4 +119,23 @@ body {
 
 .winner-modal .game-button {
   flex: 1;
+}
+
+@media only screen and (max-width: 600px) {
+  .game {
+    width: 275px;
+  }
+  .button-panel {
+    grid-column: span 2;
+  }
+  .p1 {
+    grid-row: 1;
+    transform: rotate(180deg);
+  }
+  .score {
+    font-size: 3rem;
+  }
+  .score:first-of-type {
+    transform: rotate(180deg);
+  }
 }

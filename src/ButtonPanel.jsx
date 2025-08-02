@@ -5,7 +5,7 @@ function PointsButton({ value, addPoints }) {
 
   return (
     <div className="points-button" onClick={handleClick}>
-      + {value}
+      {value}
     </div>
   );
 }

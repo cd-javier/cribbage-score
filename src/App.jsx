@@ -36,7 +36,7 @@ function WinnerModal({ handleClose, handleRestart }) {
 
 export default function App() {
   const [scoreDisplay, setScoreDisplay] = useState([0, 0]);
-  const [showWinnerOverlay, setShowWinnerOverlay] = useState(true);
+  const [showWinnerOverlay, setShowWinnerOverlay] = useState(false);
   const score = useRef(new Score());
 
   function updateDisplay() {
