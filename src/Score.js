@@ -6,12 +6,28 @@ export default class Score {
   }
 
   addP1(points) {
-    this.p1 += points;
-    this.log.push([this.p1, this.p2]);
+    if (this.theresAWinner) return;
+    const newScore = this.p1 + points;
+    if (newScore < 121) {
+      this.p1 = newScore;
+      this.log.push([this.p1, this.p2]);
+    } else {
+      this.p1 = 121;
+      this.log.push([this.p1, this.p2]);
+      return 'winner';
+    }
   }
   addP2(points) {
-    this.p2 += points;
-    this.log.push([this.p1, this.p2]);
+    if (this.theresAWinner) return;
+    const newScore = this.p2 + points;
+    if (newScore < 121) {
+      this.p2 = newScore;
+      this.log.push([this.p1, this.p2]);
+    } else {
+      this.p2 = 121;
+      this.log.push([this.p1, this.p2]);
+      return 'winner';
+    }
   }
 
   undo() {
@@ -27,5 +43,9 @@ export default class Score {
 
   get currentScore() {
     return [this.p1, this.p2];
+  }
+
+  get theresAWinner() {
+    return this.p1 === 121 || this.p2 === 121;
   }
 }
