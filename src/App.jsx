@@ -79,12 +79,16 @@ export default function App() {
       <ButtonPanel player={'p1'} addPoints={addPoints1} />
       <ButtonPanel player={'p2'} addPoints={addPoints2} />
       <div className="actions">
-        <div className="game-button" onClick={undo}>
+        <button
+          className="game-button"
+          disabled={score.current.log.length === 1}
+          onClick={undo}
+        >
           UNDO
-        </div>
-        <div className="game-button" onClick={restart}>
+        </button>
+        <button className="game-button" onClick={restart}>
           RESTART
-        </div>
+        </button>
       </div>
     </div>
   );

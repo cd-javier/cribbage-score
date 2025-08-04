@@ -75,6 +75,10 @@ body {
   font-weight: 500;
 }
 
+.game-button:disabled {
+  opacity: 0.5;
+}
+
 .points-button,
 .game-button {
   border-radius: 0.5rem;
